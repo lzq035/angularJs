@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0,user-scalable=no,initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+    <title>个人博客-搜索</title>
+    <link rel="stylesheet" href="libs/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/public.css">
+    <script src="libs/angular.js"></script>
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">直达博客</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="#">首页</a></li>
+            <li><a></a></li>
+            <!-- <li><a href="#contact">Contact</a></li> -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+    <div class="container main">
+        <div class="container left">
+          <!-- <div class="username">
+            <div style="font-size:25px;">
+
+            </div>
+          </div> -->
+            <ul class="list-unstyled">
+                <li class="userImg"><a><img src="images/user.jpg" alt=""></a></li>
+                <li><a href="/"><span class="glyphicon glyphicon-home"></span>&nbsp;&nbsp;首页</a></li>
+                <li><a href="record.html"><span class="glyphicon glyphicon-print"></span>&nbsp;&nbsp;存档</a></li>
+                <li><a href="tag.html"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签</a></li>
+                <li class="signin"><a href="signin.html"><span class="glyphicon glyphicon-plus"></span>&nbsp;&nbsp;登录</a></li>
+                <li class="reginster"><a href="reginster.html"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;注册</a></li>
+                <li class="upload" style="display:none;"><a href="upload.html"><span class="glyphicon glyphicon-upload"></span>&nbsp;&nbsp;上传</a></li>
+                <li class="post" style="display:none;"><a href="post.html"><span class="glyphicon glyphicon-share"></span>&nbsp;&nbsp;发布</a></li>
+                <li class="signout" style="display:none;cursor:pointer;"  onclick="signout()"><a><span class="glyphicon glyphicon-off"></span>&nbsp;&nbsp;退出</a></li>
+                <!-- <li>
+                    <form >
+                        <div class="form-group">
+                            <label for="search"></label>
+                            <input type="text" id="search" class="form-control" placeholder="搜索...">
+                        </div>
+                    </form>
+                </li> -->
+            </ul>
+        </div>
+        <div class="container right">
+          <header><h1>搜索结果</h1></header><hr>
+          <div class="message" style="display:none;"></div>
+          <main ng-app="myApp" ng-controller="myCtrl">
+              <div ng-show="code">抱歉，没有你想要的文章</div>
+              <div ng-repeat="item in items" class="ng-hide">
+                    <div  ng-show="item.title? true :false" class="ng-hide">
+                        <div class="title" ><a class="redFont" ng-click="idClick(item.id)">{{item.title}}</a></div>
+                        <div class="info">
+                          <span>作者：</span><span><a class="redFont">{{item.username}}</a></span>&nbsp;|
+                          <span>日期：</span><span >{{item.time | showTime}}</span>&nbsp;|
+                          <span>标签：</span><span class="redTag tag" ng-class="{'none':item.tag1?false:true}">{{item.tag1}}</span>
+                          <span class="redTag tag" ng-class="{'none':item.tag2?false:true}">{{item.tag2}}</span>
+                          <span class="redTag tag" ng-class="{'none':item.tag3?false:true}">{{item.tag3}}</span>
+                        </div>
+                        <div class="content">{{item.content}}</div>
+                        <div class="score">
+                          <span>阅读：</span><span>{{item.count}}</span>&nbsp;|
+                          <span>评论：</span><span>{{item.reply.length}}</span>
+                        </div>
+                      </div>
+              </div>
+          </main>
+        </div>
+    </div><!-- /.container -->
+
+    <script src="libs/jquery.js"></script>
+    <script src="libs/bootstrap/js/bootstrap.js"></script>
+    <script src="libs/jquery.cookie.js"></script>
+    <script src="script/public.js"></script>
+    <script src="script/search.js"></script>
+  </body>
+</html>

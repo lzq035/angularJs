@@ -1,0 +1,94 @@
+body{
+    min-width: 600px;
+}
+.main{
+    margin-top: 70px;
+}
+.main .left,.mian .right{
+    float: left;
+}
+.main .left{
+    width: 20%;
+    margin-top: 20px;
+}
+.main .left ul li{
+    height: 50px;
+    line-height: 50px;
+    text-align: right;
+}
+.main .left ul li a{
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+}
+.main .left .userImg a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.main .left .userImg a img{
+    height: 100%;
+    width: 50px;
+}
+.main .left ul li form{
+    /* height: 50px; */
+}
+.main .left ul li form .form-group {
+    height: 100% !important;
+}
+
+.main .left .userImg a img{
+    border: 1px solid transparent;
+    border-radius: 50%;
+}
+
+.main .left .username{
+    width: 100px;
+    height: 130px; 
+    text-align: right;
+    position: relative;
+}
+.img{
+    width: 100px;
+    height: 100px;
+    /* position: absolute;
+    right: 0px; */
+}
+
+.main .right{
+    float: left;
+    width: 79%;
+    margin-left: 1%;
+}
+
+.main .right main .title{
+    font-size: 30px;
+    color: red;
+}
+.main .right main .redFont{
+    color: red;
+}
+.main .right main .redTag{
+    height: 16px;
+    padding: 5px; 
+    background-color: red;
+    border-radius: 4px;
+}
+.main .right main .content{
+    font-size: 20px;
+    text-indent: 2rem;
+    margin: 10px 0;
+}
+
+/* 控制标签是否显示 */
+.block{
+    display: block;
+}
+.none{
+    display: none;
+}
+
+/* 显示回复模块 */
+.reply{
+    margin-top: 20px;
+}

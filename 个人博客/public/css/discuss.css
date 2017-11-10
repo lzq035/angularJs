@@ -1,0 +1,4 @@
+.reply div>div:nth-child(2) p{
+    font-size: 16px;
+    padding: 5px 32px; 
+}
